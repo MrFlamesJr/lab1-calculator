@@ -12,27 +12,9 @@ export class BasicCalculator {
 
 
   calculate = (operator: string, first: string, second: string) => {
-    //strings because html inputs are strings
+    // strings because html inputs are strings
 
     console.log(first, operator, second);
     // calculate and set this.answer (this automatically sets it in the DOM because of [value]=)
   }
 }
-
-
-
-
-
-
-/*
-  //possible solution:
-
-  operations: { [key: string]: (a: number, b: number) => number } = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '×': (a, b) => a * b,
-    '÷': (a, b) => a / b
-  };
-
-  this.operations[operator](Number(first), Number(second));
- */
