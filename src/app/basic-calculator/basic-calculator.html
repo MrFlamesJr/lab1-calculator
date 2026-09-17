@@ -1,5 +1,29 @@
 <div class="calculator-container">
-  <div><h3>Premier nombre</h3><input type="number"></div>
-  <div><h3>Deuxième nombre</h3><input type="number"></div>
-  <div><h3>Résultat</h3><input type="number" readonly></div>
+  <div class="rows">
+    <div><h3>Premier nombre</h3>
+
+      <input 
+        type="number" 
+        #inputFirst 
+        (focus)="$any($event.target).select()">  <!-- auto selects text on focus -->
+
+        
+    </div>
+    <div><h3>Deuxième nombre</h3>
+
+      <input 
+        type="number" 
+        #inputSecond 
+        (focus)="$any($event.target).select()">  <!-- auto selects text on focus -->
+
+    </div>
+    <div><h3>Résultat</h3><input type="number" readonly [value]="answer"></div>
+  </div>
+
+  <div class="operation-row"> <!-- lays out the 4 operation buttons with the same method call -->
+    @for (operator of ['+', '-', '×', '÷']; track operator) {
+      <button (click)="calculate(operator, inputFirst.value, inputSecond.value)">{{ operator }}</button>
+    }
+  </div>
+
 </div>

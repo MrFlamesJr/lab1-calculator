@@ -9,6 +9,6 @@
     align-items: center;
     height:100%;
     width :100%;
-    background-image: radial-gradient(var(--grid-dots) 1px, transparent 1px);
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
     background-size: 20px 20px;
 }
